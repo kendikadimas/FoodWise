@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Waste</title>
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    
+<div id="form-waste" class="flex flex-col items-center justify-center gap-10 p-10">
+  
+    <form id="wasteForm" class="form-container flex flex-col gap-8 p-6 bg-white rounded-md shadow-md">
+    
+    <div class="image-section flex flex-col gap-4">
+        <input id="fileInput" type="file" multiple class="file-input border border-gray-300 rounded-md p-2">
+        <div id="imagePreview" class="uploaded-images flex gap-4">
+        
+        </div>
+    </div>
+
+   
+    <div class="form-section flex flex-col gap-6">
+    
+        <div class="flex items-center gap-4">
+            <p class="font-semibold">Jenis Makanan Sisa</p>
+            <button type="button" onclick="selectType('Makanan Layak Konsumsi')" class="type-button px-4 py-2 rounded-md border bg-gray-100 text-green-700 border-green-500 hover:bg-green-500 hover:text-white">
+            Makanan Layak Konsumsi
+            </button>
+            <button type="button" onclick="selectType('Makanan Tak Layak Konsumsi')" class="type-button px-4 py-2 rounded-md border bg-gray-100 text-green-700 border-green-500 hover:bg-green-500 hover:text-white">
+            Makanan Tak Layak Konsumsi
+            </button>
+        </div>
+
+    
+    <div class="flex items-center gap-4">
+        <p class="font-semibold">Berat Sampah</p>
+        <input id="weightInput" type="range" min="1" max="50" value="1" class="w-full" oninput="updateWeightLabel(this.value)">
+        <span id="weightLabel" class="font-semibold">1 Kg</span>
+    </div>
+
+    
+    <div class="flex items-center gap-4">
+        <p class="font-semibold">Tanggal Pengangkutan</p>
+        <input id="dateInput" type="date" class="border rounded-md px-3 py-2 focus:ring-2 focus:ring-green-400">
+    </div>
+
+      
+    <div class="flex flex-col gap-2">
+        <p class="font-semibold">Jadwal Pengangkutan</p>
+        <div class="flex gap-2">
+            <button type="button" onclick="selectTime('08:00 - 09:00')" class="time-button px-4 py-2 rounded-md border bg-gray-100 text-green-700 border-green-500 hover:bg-green-500 hover:text-white">08:00 - 09:00</button>
+            <button type="button" onclick="selectTime('09:00 - 10:00')" class="time-button px-4 py-2 rounded-md border bg-gray-100 text-green-700 border-green-500 hover:bg-green-500 hover:text-white">09:00 - 10:00</button>
+            <button type="button" onclick="selectTime('16:00 - 17:00')" class="time-button px-4 py-2 rounded-md border bg-gray-100 text-green-700 border-green-500 hover:bg-green-500 hover:text-white">16:00 - 17:00</button>
+        </div>
+    </div>
+
+    
+    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">
+        Submit Form
+    </button>
+    </div>
+  </form>
+
+<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-md p-6 shadow-lg">
+        <h2 class="text-lg font-bold">Form Berhasil Dikirim!</h2>
+        <p class="mt-2">Silakan Melanjutkan ke Tahap Selanjutnya!</p>
+    <div class="flex justify-center mt-4">
+        <button onclick="closePopup()" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md mr-2">
+            Tutup
+        </button>
+        <button onclick="continueToNextStep()" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md">
+            Lanjutkan
+        </button>
+    </div>
+    </div>
+</div>
+</div>
+
+<script>
+    let selectedType = '';
+    let selectedTime = '';
+
+    function selectType(type) {
+        selectedType = type;
+        document.querySelectorAll('.type-button').forEach(button => {
+        button.classList.remove('bg-green-500', 'text-white');
+        button.classList.add('bg-gray-100', 'text-green-700');
+    });
+        event.target.classList.add('bg-green-500', 'text-white');
+    }
+
+    function updateWeightLabel(value) {
+    document.getElementById('weightLabel').textContent = `${value} Kg`;
+    }
+
+    function selectTime(time) {
+        selectedTime = time;
+        document.querySelectorAll('.time-button').forEach(button => {
+        button.classList.remove('bg-green-500', 'text-white');
+        button.classList.add('bg-gray-100', 'text-green-700');
+    });
+    event.target.classList.add('bg-green-500', 'text-white');
+}
+
+    function previewImages(event) {
+        const files = Array.from(event.target.files);
+        const previewContainer = document.getElementById('imagePreview');
+        previewContainer.innerHTML = ''; 
+
+    files.forEach(file => {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.className = 'h-24 w-24 object-cover rounded-md';
+        previewContainer.appendChild(img);
+    });
+}
+
+    document.getElementById('fileInput').addEventListener('change', previewImages);
+
+    document.getElementById('wasteForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const selectedDate = document.getElementById('dateInput').value;
+        if (selectedType && selectedTime && selectedDate && document.getElementById('fileInput').files.length > 0) {
+        showPopup();
+        } else {
+        alert('Mohon lengkapi semua data sebelum submit');
+        }
+    });
+
+    function showPopup() {
+        document.getElementById('popup').classList.remove('hidden');
+    }
+
+    function closePopup() {
+        document.getElementById('popup').classList.add('hidden');
+    }
+</script>
+
+</body>
+</html>
+
