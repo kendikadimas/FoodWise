@@ -6,8 +6,11 @@ module.exports = {
     "./src/**/*.{html,js}",
   ],},
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customGreen: '#15977F', // Adding your custom green color
+      },
+    },
   },
   plugins: [],
-}
-
+};
