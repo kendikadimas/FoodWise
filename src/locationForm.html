@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./output.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>Healthy Form - FoodWise</title>
-  
+    <title>Form Location</title>
+    <link href="./output.css" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body style="background-color: rgba(134, 208, 198, 0.1);"> 
+<body style="background-color: rgba(134, 208, 198, 0.1);">
     <nav class="flex justify-between p-8">
         <div class=" text-teal-400 font-bold text-4xl ml-20">Foodwise</div>
         <ul class="flex justify-between gap-7">
@@ -30,66 +29,81 @@
         </a>
     </nav>
 
-        <h1 class="text-7xl font-bold text-center text-teal-400 mt-16">Healthy Form</h1>
+    <div class="flex flex-col md:flex-row w-full max-w-4xl mx-auto p-4 gap-8 mt-20 mb-20">
+        <!-- Map Iframe -->
+        <div class="flex-1">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d431.13932259354686!2d109.33633221708098!3d-7.428911860803552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559814ade5b79%3A0xaef1b7bab5cba0f0!2sFakultas%20Teknik%20Universitas%20Jenderal%20Soedirman!5e0!3m2!1sid!2sid!4v1729860280696!5m2!1sid!2sid"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
 
-    <div class="w-1/2 m-auto my-10">
-        <form>
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <div class="flex flex-col">
-                    <label for="umur" class="mb-1">Umur</label>
-                    <input type="number" name="umur" id="umur" class="border-2 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="gender" class="mb-1">Jenis Kelamin</label>
-                    <select option="genderi" id="gender" class="border-2 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full">
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="weight" class="mb-1">Berat Badan</label>
-                    <input
-                        type="number"
-                        name="weight"
-                        id="weight"
-                        class="border-2 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full"
-                    />
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="height" class="mb-1">Tinggi Badan</label>
-                    <input
-                        type="number"
-                        name="height"
-                        id="height"
-                        class="border-2 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full"
-                    />
-                </div>
+        <!-- Form Section -->
+        <div class="flex-1 flex flex-col space-y-6">
+            <!-- Location Input -->
+            <div>
+                <label for="location" class="block font-semibold text-lg">Detail Lokasi</label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    class="w-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 p-3 rounded-md"
+                    placeholder="Masukkan detail lokasi">
             </div>
 
-            <div class="flex flex-col mb-4">
-                <label for="activity" class="mb-2">Aktivitas Fisik</label>
-                <select
-                    name="activity"
-                    id="activity"
-                    class="border-2 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full"
-                >
-                    <option value="jarang">Aktivitas Jarang (1 minggu 1x)</option>
-                    <option value="sedang">Aktivitas Sedang (1 minggu 2x)</option>
-                    <option value="sering">Aktivitas Sering (1 minggu 3x-5x)</option>
-                </select>
+            <!-- Landmark Input -->
+            <div>
+                <label for="patokan" class="block font-semibold text-lg">Patokan</label>
+                <input
+                    type="text"
+                    id="patokan"
+                    name="patokan"
+                    class="w-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 p-3 rounded-md"
+                    placeholder="Masukkan patokan">
             </div>
 
-            <a href="healthy.html" class="flex items-center justify-center bg-teal-400  hover:opacity-80 rounded-xl px-5 py-1 font-semibold text-white mt-5 w-full p-5 mb-32">
-                Submit
-            </a>
-        </form>
+            <!-- Phone Number Input -->
+            <div>
+                <label for="phone" class="block font-semibold text-lg">No. Telepon</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 p-3 rounded-md"
+                    placeholder="Masukkan nomor telepon">
+            </div>
+
+            <!-- Submit Button -->
+            <button
+                onclick="showPopup()"
+                class="bg-teal-400 hover:opacity-80 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                Kirim Lokasi
+            </button>
+
+            <!-- Back Button -->
+            <button
+                onclick="window.location.href='formWaste.html'"
+                class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-md transition duration-300">
+                Kembali
+            </button>
+        </div>
+
+        <!-- Confirmation Popup -->
+        <div id="confirmationPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-md shadow-md text-center">
+                <p class="mb-4">Lokasi berhasil dikirim!</p>
+                <button onclick="closePopup()" class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-md">Tutup</button>
+            </div>
+        </div>
     </div>
 
     <footer
-    class="bg-white text-black">
+    class="bg-white text-black ">
     <div
         class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div class="mr-12 hidden lg:block">
@@ -176,7 +190,7 @@
             </svg>
             FoodWise
             </h6>
-            <p class='text-gray-400'>
+            <p class="text-gray-400">
             Here you can use rows and columns to organize your footer
             content. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit.
@@ -288,12 +302,23 @@
     </div>
 
     <div class="p-6 text-center bg-slate-100">
-        <span class='text-slate-300'>© 2024 Copyright:</span>
+        <span class="text-slate-300">© 2024 Copyright:</span>
         <a
         class="font-semibold text-neutral-600 dark:text-neutral-400"
         href="https://tw-elements.com/"
         >Gacorian Team</a>
     </div>
     </footer>
+
+    <script>
+        function showPopup() {
+            document.getElementById('confirmationPopup').classList.remove('hidden');
+        }
+
+        function closePopup() {
+            document.getElementById('confirmationPopup').classList.add('hidden');
+        }
+    </script>
+
 </body>
 </html>
