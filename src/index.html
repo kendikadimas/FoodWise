@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+
     <title>Home - FoodWise</title>
 </head>
 <body style="background-color: rgba(134, 208, 198, 0.1);">
     <nav class="flex justify-between p-8">
-        <div class=" text-teal-400 font-bold text-4xl ml-20">Foodwise</div>
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="assets/log.png" class="ml-20" alt="Flowbite Logo" style="height: 40px;"/>
+            <span class="text-teal-400 font-bold text-3xl">Foodwise</span>
+        </a>
         <ul class="flex justify-between gap-7">
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
             </li>
             <li>
                 <a href="healthyForm.html">Healthy</a>
@@ -97,38 +103,88 @@
         </div>
         </section>
 
-        <!-- <section>
-            <h2 class="text-3xl text-teal-400 font-semibold text-center p-5">Restaurant Recomendation</h2>
-
-            <div class="flex mb-20">
-                <div>
-                    <img src=./assets/Fedwell.png alt="Fedwell.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300 ..." />
+        <section>
+            <h2 class="text-3xl text-teal-400 font-semibold text-center p-5">Rekomendasi Restoran</h2>
+        
+            <div class="flex justify-center gap-10 mb-20">
+                <!-- Fed Well Restaurant -->
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./assets/Fedwell.png" alt="Fedwell.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 rounded-t-lg" />
                     <div class="flex justify-between p-4">
                         <h2 class="text-left text-2xl">Fed Well Restaurant</h2>
-                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg"> 4.5 ★</div>
+                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg">4.5 ★</div>
                     </div>
-                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" onclick="popup('Fedwell')">View Details</button>
+                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" 
+                        onclick="showPopup('Fed Well Restaurant', 'Fed Well menyajikan hidangan sehat dengan suasana yang nyaman. Restoran ini mengutamakan bahan-bahan lokal segar yang diolah menjadi hidangan modern.', 'Bowl of Goodness, Salmon Poke, Matcha Smoothie')">Lihat Detail</button>
                 </div>
-
-                <div>
-                    <img src=./assets/Burgreens.png alt="Burgreens.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300 ..." />
+        
+                <!-- Burgreens Restaurant -->
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./assets/Burgreens.png" alt="Burgreens.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 rounded-t-lg" />
                     <div class="flex justify-between p-4">
-                        <h2 class="text-center text-2xl">Burgreens Restaurant</h2>
-                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg"> 4.5 ★</div>
+                        <h2 class="text-left text-2xl">Burgreens Restaurant</h2>
+                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg">4.5 ★</div>
                     </div>
-                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" onclick="popup('Burgreens')">View Details</button>
+                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" 
+                        onclick="showPopup('Burgreens Restaurant', 'Burgreens terkenal dengan hidangan berbasis tanaman yang sehat dan ramah lingkungan. Dengan bahan organik, Burgreens menawarkan pengalaman makan yang mendukung keberlanjutan.', 'Green Burger, Vegan Nachos, Tropical Smoothie')">Lihat Detail</button>
                 </div>
-
-                <div>
-                    <img src=./assets/Saladstop.png alt="Saladstop.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300 ..." />
+        
+                <!-- Saladstop Restaurant -->
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./assets/Saladstop.png" alt="Saladstop.png" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 rounded-t-lg" />
                     <div class="flex justify-between p-4">
-                        <h2 class="text-center text-2xl">Saladstop Restaurant</h2>
-                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg"> 4.5 ★</div>
+                        <h2 class="text-left text-2xl">Saladstop Restaurant</h2>
+                        <div class="ml-4 bg-yellow-400 text-white font-semibold px-2 py-1 rounded-lg">4.5 ★</div>
                     </div>
-                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" onclick="popup('Saladstop')">View Details</button>
+                    <button class="bg-teal-400 rounded-xl px-5 py-1 font-semibold text-white mt-2 flex m-auto" 
+                        onclick="showPopup('Saladstop Restaurant', 'Saladstop menawarkan pilihan salad dan wrap segar yang sehat dan lezat. Ideal untuk mereka yang menginginkan makanan cepat namun tetap menyehatkan.', 'Caesar Salad, Greek Wrap, Detox Juice')">Lihat Detail</button>
                 </div>
             </div>
-        </section> -->
+        
+            <!-- Pop-up Modal -->
+            <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg w-96 text-left relative">
+                    <h3 id="popupTitle" class="text-2xl font-bold mb-2 text-teal-500"></h3>
+                    <p id="popupDescription" class="mb-4 text-gray-700"></p>
+                    <h4 class="text-lg font-semibold mb-1 text-gray-800">Menu Unggulan:</h4>
+                    <ul id="popupMenu" class="list-disc list-inside text-gray-700 mb-4"></ul>
+                    <div class="flex justify-end">
+                        <button class="bg-teal-400 text-white font-semibold px-4 py-2 rounded-lg mr-2" onclick="viewMap()">Lihat Peta</button>
+                        <button class="bg-red-400 text-white font-semibold px-4 py-2 rounded-lg" onclick="hidePopup()">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        
+            <script>
+                function showPopup(title, description, menu) {
+                    document.getElementById('popupTitle').innerText = title;
+                    document.getElementById('popupDescription').innerText = description;
+        
+                    const menuList = menu.split(', ');
+                    const popupMenu = document.getElementById('popupMenu');
+                    popupMenu.innerHTML = ''; // Clear previous items
+                    menuList.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = item;
+                        popupMenu.appendChild(listItem);
+                    });
+        
+                    document.getElementById('popup').classList.remove('hidden');
+                }
+        
+                function hidePopup() {
+                    document.getElementById('popup').classList.add('hidden');
+                }
+        
+                function viewMap() {
+                    // Ganti dengan tautan Google Maps sesuai lokasi restoran
+                    window.open("https://www.google.com/maps", "_blank");
+                }
+            </script>
+        </section>
+        
+        
+        
 
         <footer
     class="bg-white text-black">
@@ -369,6 +425,8 @@
     </div>
 
 </body>
+
+
 
 <!-- <script>
     function popup(name) {

@@ -1,0 +1,5 @@
+/* Gaya untuk item aktif di navbar */
+nav ul li a.active {
+    color: #38b2ac; /* teal-400 */
+    font-weight: bold;
+}

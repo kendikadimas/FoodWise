@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Location</title>
     <link href="./output.css" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body style="background-color: rgba(134, 208, 198, 0.1);">
     <nav class="flex justify-between p-8">
-        <div class=" text-teal-400 font-bold text-4xl ml-20">Foodwise</div>
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="assets/log.png" class="ml-20" alt="Flowbite Logo" style="height: 40px;"/>
+            <span class="text-teal-400 font-bold text-3xl ml-5">Foodwise</span>
+        </a>
         <ul class="flex justify-between gap-7">
             <li>
                 <a href="index.html">Home</a>
@@ -18,7 +22,7 @@
                 <a href="healthyForm.html">Healthy</a>
             </li>
             <li>
-                <a href="waste.html">Waste</a>
+                <a href="waste.html" class="active">Waste</a>
             </li>
             <li>
                 <a href="program.html">Program</a>
