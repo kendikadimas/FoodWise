@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Location</title>
-    <link href="./output.css" rel="stylesheet">  
-    <link rel="stylesheet" href="style.css">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body style="background-color: rgba(134, 208, 198, 0.1);">
     <nav class="flex justify-between p-8">
         <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="assets/log.png" class="ml-20" alt="Flowbite Logo" style="height: 40px;"/>
-            <span class="text-teal-400 font-bold text-3xl ml-5">Foodwise</span>
+            <span class="text-teal-400 font-bold text-3xl">Foodwise</span>
         </a>
         <ul class="flex justify-between gap-7">
             <li>
@@ -100,8 +100,10 @@
         <!-- Confirmation Popup -->
         <div id="confirmationPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
             <div class="bg-white p-6 rounded-md shadow-md text-center">
-                <p class="mb-4">Lokasi berhasil dikirim!</p>
-                <button onclick="closePopup()" class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-md">Tutup</button>
+                <h2 class="text-lg font-bold">Form Berhasil Dikirim!</h2>
+                <p class="mt-2">Pengangkut Sampah Akan Segera Menuju Ke Tempat Anda!</p>
+                <button onclick="closePopup()" class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-md transition duration-300">Tutup</button>
+                <button onclick="ContinueToNextStep()" class="bg-teal-400 hover:opacity-80 text-white font-bold py-2 px-4 rounded-md">Lanjutkan</button>
             </div>
         </div>
     </div>
@@ -321,6 +323,10 @@
 
         function closePopup() {
             document.getElementById('confirmationPopup').classList.add('hidden');
+        }
+
+        function ContinueToNextStep() {
+            window.location.href = 'finishedForm.html';
         }
     </script>
 
