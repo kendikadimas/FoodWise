@@ -38,7 +38,8 @@
 <div id="form-waste" class="flex flex-col items-center justify-center gap-10 p-10">
   
     <form id="wasteForm" class="form-container flex flex-col gap-8 p-6 bg-white rounded-md shadow-md">
-    
+    <h2 class="text-2xl font-bold text-teal-400">Form Pengangkutan Sisa Sampah Makanan</h2>
+    <p>Silakan isi form berikut untuk melakukan pengangkutan sisa sampah makanan</p>
     <div class="image-section flex flex-col gap-4">
         <input id="fileInput" type="file" multiple class="file-input border border-gray-300 rounded-md p-2">
         <div id="imagePreview" class="uploaded-images flex gap-4"></div>
@@ -81,13 +82,18 @@
   </form>
 </section>
 
-<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-white rounded-md p-6 shadow-lg">
-        <h2 class="text-lg font-bold">Form Berhasil Dikirim!</h2>
-        <p class="mt-2">Silakan Melanjutkan ke Tahap Selanjutnya!</p>
-        <div class="flex justify-center mt-4">
-            <button onclick="closePopup()" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md mr-2">Tutup</button>
-            <button onclick="continueToNextStep()" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md">Lanjutkan</button>
+<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 fade-in scale-up">
+    <div class="bg-white rounded-lg p-6 shadow-2xl transform transition-all duration-300 ease-out scale-95">
+        <h2 class="text-lg font-bold text-center text-gray-800">Form Berhasil Dikirim!</h2>
+        <img src="assets/checkmark.png" alt="Checkmark" class="w-20 h-20 mx-auto mt-4 animate-bounce">
+        <p class="text-center text-gray-600 mt-2">Silahkan lanjut ke proses berikutnya</p>
+        <div class="flex justify-center mt-6 space-x-4">
+            <button onclick="closePopup()" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-md transition ease-in-out duration-200">
+                Tutup
+            </button>
+            <button onclick="continueToNextStep()" class="bg-teal-400 hover:bg-teal-500 text-white py-2 px-4 rounded-md transition ease-in-out duration-200">
+                Lanjutkan
+            </button>
         </div>
     </div>
 </div>
