@@ -52,7 +52,7 @@
             </div>
             <div class="flex justify-between">
                 <div class="w-1/2">
-                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around my-5 p-4 w-[590px] hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around p-4 w-[590px] hover:scale-105 transition-transform duration-300">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <img src="./assets/SereBanana.png" class="h-20 w-20 object-cover rounded-lg" alt="SereBanana" />
@@ -64,7 +64,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <span class="text-3xl">+</span>
+                            <button onclick="popup()" class="text-3xl">+</button>
                         </div>
                         <div class="flex justify-center gap-6 mt-4">
                             <img src="./assets/fat.png" alt="lemak"><p>45 gr</p>
@@ -117,7 +117,7 @@
                 </div>
 
                 <div class="w-1/2">
-                    <div class="p-10 bg-[#F7FFFE] mt-5 rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
+                    <div class="p-10 bg-[#F7FFFE]  rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
                         <h2 class="font-bold text-2xl text-center mt-[13px]">Breakfast Notes</h2>
                         <p class="text-justify text-[20px] mt-8">Catatan Sarapan ini mencakup rekomendasi makanan berdasarkan kebutuhan kalori, dengan tiga pilihan utama: Serebanana, Sereberry, dan Eggvege. Serebanana merupakan kombinasi sereal sehat dengan potongan pisang yang kaya serat dan energi. Sereberry menawarkan variasi sereal dengan tambahan buah beri segar yang kaya antioksidan dan vitamin. Eggvege adalah menu telur dengan campuran sayuran yang seimbang, memberikan asupan protein dan serat yang ideal untuk memulai hari. Ketiga pilihan ini dirancang untuk memberikan nutrisi lengkap dengan kalori yang sesuai kebutuhan tubuh.</p>
                     </div>
@@ -136,7 +136,7 @@
             </div>
             <div class="flex justify-between">
                 <div class="w-1/2">
-                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around my-5 p-4 w-[590px] hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around p-4 w-[590px] hover:scale-105 transition-transform duration-300">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <img src="assets/ChicVege.png" class="h-20 w-20 object-cover rounded-lg" alt="ChicVege" />
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="w-1/2">
-                    <div class="p-10 bg-[#F7FFFE] mt-5 rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
+                    <div class="p-10 bg-[#F7FFFE] rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
                         <h2 class="font-bold text-2xl text-center mt-[13px]">Lunch Notes</h2>
                         <p class="text-justify text-[20px] mt-8">Catatan Makan Siang ini menghadirkan rekomendasi makanan yang seimbang berdasarkan kebutuhan kalori, dengan tiga pilihan utama: Chicvege, Tunavege, dan Capcay. Chicvege adalah sajian ayam panggang yang dipadukan dengan sayuran segar, memberikan asupan protein dan serat yang optimal. Tunavege menawarkan kombinasi tuna kaya omega-3 dengan sayuran hijau untuk keseimbangan nutrisi dan energi. Sedangkan Capcay, terdiri dari berbagai sayuran yang dimasak dengan sedikit minyak, memberikan pilihan rendah kalori namun kaya serat dan vitamin untuk menjaga energi di siang hari.</p>
                     </div>
@@ -220,7 +220,7 @@
             </div>
             <div class="flex justify-between">
                 <div class="w-1/2">
-                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around my-5 p-4 w-[590px] hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#F7FFFE] rounded-lg h-40 items-center justify-around p-4 w-[590px] hover:scale-105 transition-transform duration-300">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <img src="assets/ChicRoast.png" class="h-20 w-20 object-cover rounded-lg" alt="ChicRoast" />
@@ -285,7 +285,7 @@
                 </div>
 
                 <div class="w-1/2">
-                    <div class="p-10 bg-[#F7FFFE] mt-5 rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
+                    <div class="p-10 bg-[#F7FFFE] rounded-lg mb-5 hover:scale-105 transition-transform duration-300 h-[520px]">
                         <h2 class="font-bold text-2xl text-center mt-[13px]">Dinner Notes</h2>
                         <p class="text-justify text-[20px] mt-8">Catatan Makan Malam ini menyajikan rekomendasi makanan berdasarkan kebutuhan kalori dengan tiga pilihan utama: Chicroast, Chicsal, dan Masvege. Chicroast adalah ayam panggang yang rendah lemak namun kaya akan protein, ideal untuk makan malam yang ringan namun mengenyangkan. Chicsal menawarkan salad ayam dengan sayuran segar, memberikan keseimbangan antara protein dan serat untuk pencernaan yang baik. Sedangkan Masvege adalah hidangan mashed potato dengan tambahan sayuran, menciptakan pilihan yang lembut namun kaya nutrisi untuk malam yang lebih santai.</p>
                     </div>
@@ -501,5 +501,30 @@
         >Gacorian Team</a>
     </div>
     </footer>
+    
+    <div id="SereBanana" class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center">
+        <div class="w-1/2 bg-white m-auto rounded-2xl shadow-lg p-5">
+            <h1 class="text-3xl text-center font-bold text-teal-400">Pilih Preferensi Makanan Anda</h1>
+            <div class="flex gap-7 p-5">
+                <div class="items-center p-5 border border-gray-300 rounded-lg hover:shadow-lg" style="background-color: lightgray;">
+                    <img src="assets/serealjagung.jpg" alt="jagung" class="rounded-full object-cover" style="width: 200px; height: 200px;">
+                    <h2 class="mt-3 text-lg font-bold text-center text-teal-500">Sereal Jagung</h2>
+                </div>
+                <div class="items-center p-5 border border-gray-300 rounded-lg hover:shadow-lg" style="background-color: lightgray;">
+                    <img src="assets/serealoat.jpg" alt="oat" class="rounded-full object-cover" style="width: 200px; height: 200px;">
+                    <h2 class="mt-3 text-lg font-bold text-center text-teal-500">Sereal Oat</h2>
+                </div>
+                <div class="items-center p-5 border border-gray-300 rounded-lg hover:shadow-lg" style="background-color: lightgray;">
+                    <img src="assets/granola.webp" alt="granola" class="rounded-full object-cover" style="width: 200px; height: 200px;">
+                    <h2 class="mt-3 text-lg font-bold text-center text-teal-500">Sereal Granola</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    function popup() {
+        document.getElementById("SereBanana").style.display = "block";
+    }
+</script>
 </html>
