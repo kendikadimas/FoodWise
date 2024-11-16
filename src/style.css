@@ -3,3 +3,21 @@ nav ul li a.active {
     color: #38b2ac; /* teal-400 */
     font-weight: bold;
 }
+
+
+#profimg img {
+    width: 44vw;
+    animation: floatimage 4s ease-in-out infinite;
+}
+
+@keyframes floatimage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
